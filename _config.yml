@@ -1,0 +1,6 @@
+title: Jorge Palacio
+description: Process & Operations Analyst
+url: "https://jorgepalaciot.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
