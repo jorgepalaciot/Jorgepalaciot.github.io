@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="post-container">
+  <div class="post-header reveal">
+    <a href="/blog" class="back-link" data-en>← Back to blog</a>
+    <a href="/blog" class="back-link" data-es>← Volver al blog</a>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <span>{{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+  </div>
+  <div class="post-body reveal">
+    {{ content }}
+  </div>
+</div>
