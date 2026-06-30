@@ -173,9 +173,7 @@ footer p { font-size: 13px; color: var(--ink-faint); font-weight: 300; }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 13px; color: var(--ink-faint); text-decoration: none; }
 .footer-links a:hover { color: var(--accent); }
-.footer-contact { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
-.footer-contact a { font-size: 13px; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
-.footer-contact a:hover { color: var(--accent); }
+
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
