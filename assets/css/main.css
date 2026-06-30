@@ -167,6 +167,9 @@ section { max-width: 1200px; margin: 0 auto; padding: 96px 48px; }
 .post-body blockquote { border-left: 3px solid var(--accent); padding: 12px 20px; background: var(--accent-light); border-radius: 0 4px 4px 0; margin: 24px 0; font-style: italic; color: var(--accent); font-family: var(--serif); font-size: 18px; }
 
 /* FOOTER */
+.footer-contact { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
+.footer-contact a { font-size: 13px; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+.footer-contact a:hover { color: var(--accent); }
 footer { border-top: 1px solid var(--border); padding: 32px 48px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 footer p { font-size: 13px; color: var(--ink-faint); font-weight: 300; }
 .footer-links { display: flex; gap: 24px; }
