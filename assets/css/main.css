@@ -222,6 +222,21 @@ footer p { font-size: 13px; color: var(--ink-faint); font-weight: 300; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* boton estilo para opaco o claro */
+.theme-toggle {
+  background: var(--paper-warm);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 14px;
+  transition: background .2s;
+}
+.theme-toggle:hover { background: var(--accent-light); }
+.theme-icon-dark { display: none; }
+body.dark .theme-icon-light { display: none; }
+body.dark .theme-icon-dark { display: inline; }
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
