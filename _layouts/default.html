@@ -73,6 +73,15 @@
     localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
   }
 
+  function toggleMenu() {
+    document.querySelector('.hamburger').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.querySelector('.hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
   const savedLang = localStorage.getItem('lang');
   const savedTheme = localStorage.getItem('theme');
 
