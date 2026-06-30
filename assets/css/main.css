@@ -281,8 +281,9 @@ body.dark .theme-icon-dark { display: inline; }
   flex-direction: column;
   position: fixed;
   top: 65px; left: 0; right: 0;
-  background: var(--paper);
+  background: var(--paper-warm);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   padding: 8px 24px 24px;
   z-index: 99;
   transform: translateY(-12px);
@@ -303,7 +304,6 @@ body.dark .theme-icon-dark { display: inline; }
   border-bottom: 1px solid var(--border);
 }
 .mobile-menu a:last-child { border-bottom: none; }
-
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
