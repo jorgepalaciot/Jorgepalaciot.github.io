@@ -304,6 +304,8 @@ body.dark .theme-icon-dark { display: inline; }
   border-bottom: 1px solid var(--border);
 }
 .mobile-menu a:last-child { border-bottom: none; }
+
+
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
