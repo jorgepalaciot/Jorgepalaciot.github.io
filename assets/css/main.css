@@ -16,6 +16,35 @@
   --radius: 4px;
 }
 
+body.dark {
+  --ink: #f0ede4;
+  --ink-soft: #c4c0b6;
+  --ink-faint: #8a8a80;
+  --paper: #16181a;
+  --paper-warm: #1e2023;
+  --accent: #5fb37e;
+  --accent-light: #1d2e23;
+  --accent-mid: #6dc78f;
+  --gold-light: #2a2620;
+  --border: rgba(240,237,228,0.10);
+}
+body.dark .stat-card,
+body.dark .case-item,
+body.dark .skill-group,
+body.dark .cred-card,
+body.dark .contact-link,
+body.dark .contact-form-area {
+  background: var(--paper-warm);
+}
+body.dark .form-input,
+body.dark .form-textarea {
+  background: var(--paper);
+  color: var(--ink);
+}
+body.dark nav {
+  background: rgba(22,24,26,0.92);
+}
+
 html { scroll-behavior: smooth; }
 body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
