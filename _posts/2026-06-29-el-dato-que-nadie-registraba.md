@@ -4,6 +4,7 @@ title: "El dato que nadie estaba registrando"
 date: 2026-06-29
 ---
 <div data-es>
+  
 Cuando asumí la administración de un edificio multifamiliar en Lima, una de las primeras cosas que noté fue que cada vez que venía el técnico de mantenimiento de los ascensores, poco después algo se malograva.
 
 No era una queja. Era una observación. Y las observaciones sin datos no sirven de mucho.
@@ -35,7 +36,11 @@ El dato más valioso no siempre es el que ya existe. A veces hay que crearlo.
 Muchas organizaciones toman decisiones importantes basándose en la memoria de sus empleados o en la narrativa de sus proveedores. Construir un historial desde cero, aunque sea simple, cambia completamente la dinámica.
 
 No necesitas software caro. No necesitas un analista de datos. Necesitas la disciplina de registrar lo que pasa, y la paciencia de esperar a que el patrón aparezca.
+
 </div>
+
 <div data-en>
+  
 Ingles
+
 </div>
