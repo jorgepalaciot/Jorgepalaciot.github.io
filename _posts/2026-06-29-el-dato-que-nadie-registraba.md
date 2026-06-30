@@ -3,7 +3,7 @@ layout: post
 title: "El dato que nadie estaba registrando"
 date: 2026-06-29
 ---
-<div data-es>
+<div data-es markdown="1">
   
 Cuando asumí la administración de un edificio multifamiliar en Lima, una de las primeras cosas que noté fue que cada vez que venía el técnico de mantenimiento de los ascensores, poco después algo se malograva.
 
