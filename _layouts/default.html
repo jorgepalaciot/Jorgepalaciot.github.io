@@ -8,20 +8,16 @@
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 {% seo %}
 </head>
-<body>
+<body class="{% if page.url == '/' %}hero-nav-zone{% endif %}">
 
-<header>
+<header id="siteHeader">
   <div class="wrap nav">
-    <a href="{{ '/' | relative_url }}" class="brand">
-      <span class="mono-mark">JP</span>
-      <span class="name"><span class="t-es">Jorge Palacio</span><span class="t-en">Jorge Palacio</span></span>
-    </a>
+    <a href="{{ '/' | relative_url }}" class="brand">Jorge Palacio</a>
     <ul class="navlinks">
-      <li><a href="{{ '/' | relative_url }}#top"><span class="t-es">Inicio</span><span class="t-en">Home</span></a></li>
       <li><a href="{{ '/' | relative_url }}#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a></li>
       <li><a href="{{ '/' | relative_url }}#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a></li>
       <li><a href="{{ '/' | relative_url }}#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a></li>
@@ -32,14 +28,13 @@
     <div class="navctrl">
       <button class="ctrlbtn" id="langBtn" aria-label="Toggle language">ES/EN</button>
       <button class="ctrlbtn" id="themeBtn" aria-label="Toggle theme">☾/☀</button>
-      <a class="btn-cv" href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener"><span class="t-es">CV ↓</span><span class="t-en">Resume ↓</span></a>
+      <a class="btn-cv" href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener"><span class="t-es">CV</span><span class="t-en">Resume</span></a>
       <button class="hamburger" id="hamBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="{{ '/' | relative_url }}#top"><span class="t-es">Inicio</span><span class="t-en">Home</span></a>
   <a href="{{ '/' | relative_url }}#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a>
   <a href="{{ '/' | relative_url }}#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a>
   <a href="{{ '/' | relative_url }}#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a>
@@ -63,14 +58,11 @@
 </footer>
 
 <script>
-// ---- year ----
 document.getElementById('curYear').textContent = new Date().getFullYear();
 
-// ---- language: auto-detect via browser, manual override persisted ----
 const savedLang = localStorage.getItem('lang');
-if(savedLang){
-  document.documentElement.lang = savedLang;
-}else{
+if(savedLang){ document.documentElement.lang = savedLang; }
+else{
   const browserLang = (navigator.language || 'es').toLowerCase();
   document.documentElement.lang = browserLang.startsWith('en') ? 'en' : 'es';
 }
@@ -80,7 +72,6 @@ document.getElementById('langBtn').addEventListener('click', () => {
   localStorage.setItem('lang', next);
 });
 
-// ---- theme: auto-detect via prefers-color-scheme, manual override persisted ----
 const savedTheme = localStorage.getItem('theme');
 if(savedTheme){ document.documentElement.setAttribute('data-theme', savedTheme); }
 document.getElementById('themeBtn').addEventListener('click', () => {
@@ -91,7 +82,6 @@ document.getElementById('themeBtn').addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
-// ---- mobile menu ----
 const hamBtn = document.getElementById('hamBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 hamBtn.addEventListener('click', () => {
@@ -101,6 +91,20 @@ hamBtn.addEventListener('click', () => {
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   hamBtn.classList.remove('open'); mobileMenu.classList.remove('open');
 }));
+
+// header goes solid once the user scrolls past the hero (only relevant on homepage)
+const header = document.getElementById('siteHeader');
+const heroEl = document.querySelector('.hero');
+function updateHeader(){
+  if(!heroEl){ header.classList.add('solid'); header.style.position='sticky'; return; }
+  if(window.scrollY > heroEl.offsetHeight - 90){
+    header.classList.add('solid'); document.body.classList.remove('hero-nav-zone');
+  }else{
+    header.classList.remove('solid'); document.body.classList.add('hero-nav-zone');
+  }
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 </script>
 </body>
 </html>
