@@ -7,22 +7,28 @@ description: Ingeniero Industrial especializado en procesos, automatización y d
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="{{ '/assets/img/hero.jpg' | relative_url }}" alt="Jorge Palacio" onerror="this.style.display='none'">
-  </div>
-  <div class="wrap hero-inner">
-    <span class="hola"><span class="t-es">Ingeniero Industrial · Lima, Perú</span><span class="t-en">Industrial Engineer · Lima, Peru</span></span>
-    <h1>Jorge<br>Palacio</h1>
-    <p class="lead">
-      <span class="t-es">Proceso, datos y automatización al servicio de decisiones más claras — en consultoría, en una empresa, o en la siguiente etapa de mi formación.</span>
-      <span class="t-en">Process, data, and automation in service of clearer decisions — in consulting, inside a company, or in the next stage of my education.</span>
-    </p>
-    <div class="hero-actions">
-      <a href="#proyectos" class="btn btn-primary"><span class="t-es">Ver proyectos</span><span class="t-en">View projects</span></a>
-      <a href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener" class="btn btn-line"><span class="t-es">Descargar CV</span><span class="t-en">Download CV</span></a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hola"><span class="t-es">Ingeniero Industrial · Lima, Perú</span><span class="t-en">Industrial Engineer · Lima, Peru</span></span>
+      <h1>Jorge Palacio</h1>
+      <p class="lead">
+        <span class="t-es">Proceso, datos y automatización al servicio de decisiones más claras — en consultoría, en una empresa, o en la siguiente etapa de mi formación.</span>
+        <span class="t-en">Process, data, and automation in service of clearer decisions — in consulting, inside a company, or in the next stage of my education.</span>
+      </p>
+      <div class="availability">
+        <span class="pill"><span class="t-es">Abierto a empleo</span><span class="t-en">Open to work</span></span>
+        <span class="pill"><span class="t-es">Consultoría independiente</span><span class="t-en">Independent consulting</span></span>
+        <span class="pill"><span class="t-es">Postulando a maestría</span><span class="t-en">Applying to grad school</span></span>
+      </div>
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn btn-primary"><span class="t-es">Ver proyectos</span><span class="t-en">View projects</span></a>
+        <a href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener" class="btn btn-line"><span class="t-es">Descargar CV</span><span class="t-en">Download CV</span></a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="{{ '/assets/img/hero.jpg' | relative_url }}" alt="Jorge Palacio" onerror="this.style.display='none'">
     </div>
   </div>
-  <div class="scroll-cue"><span class="t-es">Desplázate</span><span class="t-en">Scroll</span></div>
 </section>
 
 <!-- ===== INTRO STATEMENT ===== -->
