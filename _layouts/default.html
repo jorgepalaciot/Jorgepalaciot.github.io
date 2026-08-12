@@ -1,98 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title }} — Jorge Palacio</title>
+<title>{% if page.title %}{{ page.title }} — Jorge Palacio{% else %}Jorge Palacio — Ingeniero Industrial{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Ingeniero Industrial especializado en procesos, datos y automatización. Disponible para consultoría, empleo y programas de posgrado. Basado en Lima, Perú.{% endif %}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% seo %}
 </head>
-<body class="lang-en">
+<body class="{% if page.url == '/' %}hero-nav-zone{% endif %}">
 
-<nav>
-  <a href="/" class="nav-logo">Jorge Palacio</a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="/#about" data-en>About</a><a href="/#about" data-es>Sobre mí</a></li>
-      <li><a href="/#work" data-en>Case studies</a><a href="/#work" data-es>Casos</a></li>
-      <li><a href="/#skills" data-en>Skills</a><a href="/#skills" data-es>Habilidades</a></li>
-      <li><a href="/blog" data-en>Blog</a><a href="/blog" data-es>Blog</a></li>
-      <li><a href="/#contact" class="nav-cta" data-en>Get in touch</a><a href="/#contact" class="nav-cta" data-es>Contacto</a></li>
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="{{ '/' | relative_url }}" class="brand">Jorge Palacio</a>
+    <ul class="navlinks">
+      <li><a href="{{ '/' | relative_url }}#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a></li>
+      <li><a href="{{ '/' | relative_url }}#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a></li>
+      <li><a href="{{ '/' | relative_url }}#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a></li>
+      <li><a href="{{ '/' | relative_url }}#educacion"><span class="t-es">Educación</span><span class="t-en">Education</span></a></li>
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      <li><a href="{{ '/' | relative_url }}#contacto"><span class="t-es">Contacto</span><span class="t-en">Contact</span></a></li>
     </ul>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <div class="navctrl">
+      <button class="ctrlbtn" id="langBtn" aria-label="Toggle language">ES/EN</button>
+      <button class="ctrlbtn" id="themeBtn" aria-label="Toggle theme">☾/☀</button>
+      <a class="btn-cv" href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener"><span class="t-es">CV</span><span class="t-en">Resume</span></a>
+      <button class="hamburger" id="hamBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-      <span class="theme-icon-light">☀️</span>
-      <span class="theme-icon-dark">🌙</span>
-    </button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-</nav>
+</header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/#about" data-en onclick="closeMenu()">About</a><a href="/#about" data-es onclick="closeMenu()">Sobre mí</a>
-  <a href="/#work" data-en onclick="closeMenu()">Case studies</a><a href="/#work" data-es onclick="closeMenu()">Casos</a>
-  <a href="/#skills" data-en onclick="closeMenu()">Skills</a><a href="/#skills" data-es onclick="closeMenu()">Habilidades</a>
-  <a href="/blog" data-en onclick="closeMenu()">Blog</a><a href="/blog" data-es onclick="closeMenu()">Blog</a>
-  <a href="/#contact" data-en onclick="closeMenu()">Get in touch</a><a href="/#contact" data-es onclick="closeMenu()">Contacto</a>
+  <a href="{{ '/' | relative_url }}#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a>
+  <a href="{{ '/' | relative_url }}#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a>
+  <a href="{{ '/' | relative_url }}#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a>
+  <a href="{{ '/' | relative_url }}#educacion"><span class="t-es">Educación</span><span class="t-en">Education</span></a>
+  <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  <a href="{{ '/' | relative_url }}#contacto"><span class="t-es">Contacto</span><span class="t-en">Contact</span></a>
+  <a href="{{ '/assets/files/CV-Jorge-Palacio.pdf' | relative_url }}" target="_blank" rel="noopener"><span class="t-es">Descargar CV</span><span class="t-en">Download resume</span></a>
 </div>
 
 {{ content }}
 
 <footer>
-  <div class="footer-contact">
-    <a href="mailto:jorgepalaciote@gmail.com">Email: jorgepalaciote@gmail.com</a>
-    <a href="tel:+51912000480">Whatsapp: +51 912 000 480</a>
-  </div>
-  <p>© 2026 Jorge Palacio · Lima, Peru</p>
-  <div class="footer-links">
-    <a href="/#about" data-en>About</a><a href="/#about" data-es>Sobre mí</a>
-    <a href="/#work" data-en>Work</a><a href="/#work" data-es>Casos</a>
-    <a href="/blog" data-en>Blog</a><a href="/blog" data-es>Blog</a>
-    <a href="/#contact" data-en>Contact</a><a href="/#contact" data-es>Contacto</a>
+  <div class="wrap footer-inner">
+    <span>© <span id="curYear">2026</span> Jorge Palacio · Lima, Perú</span>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/jorgepalaciot" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Jorgepalaciot" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:jorgepalaciote@gmail.com">Email</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  function setLang(lang) {
-    const isDark = document.body.classList.contains('dark');
-    document.body.className = 'lang-' + lang + (isDark ? ' dark' : '');
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('.lang-btn[onclick="setLang(\''+lang+'\')"]').classList.add('active');
-    localStorage.setItem('lang', lang);
+document.getElementById('curYear').textContent = new Date().getFullYear();
+
+const savedLang = localStorage.getItem('lang');
+if(savedLang){ document.documentElement.lang = savedLang; }
+else{
+  const browserLang = (navigator.language || 'es').toLowerCase();
+  document.documentElement.lang = browserLang.startsWith('en') ? 'en' : 'es';
+}
+document.getElementById('langBtn').addEventListener('click', () => {
+  const next = document.documentElement.lang === 'es' ? 'en' : 'es';
+  document.documentElement.lang = next;
+  localStorage.setItem('lang', next);
+});
+
+const savedTheme = localStorage.getItem('theme');
+if(savedTheme){ document.documentElement.setAttribute('data-theme', savedTheme); }
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+const hamBtn = document.getElementById('hamBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamBtn.addEventListener('click', () => {
+  hamBtn.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamBtn.classList.remove('open'); mobileMenu.classList.remove('open');
+}));
+
+// header goes solid once the user scrolls past the hero (only relevant on homepage)
+const header = document.getElementById('siteHeader');
+const heroEl = document.querySelector('.hero');
+function updateHeader(){
+  if(!heroEl){ header.classList.add('solid'); header.style.position='sticky'; return; }
+  if(window.scrollY > heroEl.offsetHeight - 90){
+    header.classList.add('solid'); document.body.classList.remove('hero-nav-zone');
+  }else{
+    header.classList.remove('solid'); document.body.classList.add('hero-nav-zone');
   }
-
-  function toggleTheme() {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-  }
-
-  function toggleMenu() {
-    document.querySelector('.hamburger').classList.toggle('open');
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.querySelector('.hamburger').classList.remove('open');
-    document.getElementById('mobileMenu').classList.remove('open');
-  }
-
-  const savedLang = localStorage.getItem('lang');
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedLang) setLang(savedLang);
-  if (savedTheme === 'dark') document.body.classList.add('dark');
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 </script>
 </body>
 </html>

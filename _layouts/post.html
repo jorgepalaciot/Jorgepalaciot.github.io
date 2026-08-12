@@ -2,15 +2,13 @@
 layout: default
 ---
 <div class="post-container">
-  <div class="post-header reveal">
-    <a href="/blog" class="back-link" data-en>← Back to blog</a>
-    <a href="/blog" class="back-link" data-es>← Volver al blog</a>
+  <div class="post-header">
+    <a href="{{ '/blog/' | relative_url }}" class="back-link"><span class="t-es">← Volver al blog</span><span class="t-en">← Back to blog</span></a>
     <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      <span>{{ page.date | date: "%B %d, %Y" }}</span>
-    </div>
+    <div class="post-meta">{{ page.date | date: "%d %B %Y" }}</div>
   </div>
-  <div class="post-body reveal">
+  <div class="post-body">
     {{ content }}
   </div>
+  <p style="margin-top:48px;"><a href="{{ '/blog/' | relative_url }}" class="back-link"><span class="t-es">← Volver al blog</span><span class="t-en">← Back to blog</span></a></p>
 </div>

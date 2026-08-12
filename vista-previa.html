@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge Palacio — Ingeniero Industrial</title>
+<meta name="description" content="Ingeniero Industrial especializado en procesos, datos y automatización.">
+<link rel="canonical" href="https://jorgepalaciot.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Jorge Palacio — Portfolio
+   Editorial style: warm ivory, Fraunces serif + Inter sans
+   ========================================================= */
+
+:root{
+  --bg:#FAF7F1; --bg-2:#F1EBDE; --card:#FFFFFF;
+  --ink:#22201B; --ink-soft:#5F5A4E; --ink-faint:#948D7A;
+  --line:#E4DDC9; --accent:#8B5E3C; --accent-soft:#EFE2D2;
+  --serif:'Fraunces',serif; --sans:'Inter',sans-serif;
+  --maxw:1180px;
+}
+html[data-theme="dark"]{
+  --bg:#181510; --bg-2:#211D16; --card:#211D16;
+  --ink:#F1ECE1; --ink-soft:#BDB49E; --ink-faint:#8A8271;
+  --line:#332C20; --accent:#D3986A; --accent-soft:#2B2419;
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){
+    --bg:#181510; --bg-2:#211D16; --card:#211D16;
+    --ink:#F1ECE1; --ink-soft:#BDB49E; --ink-faint:#8A8271;
+    --line:#332C20; --accent:#D3986A; --accent-soft:#2B2419;
+  }
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--ink); font-family:var(--sans); font-weight:300; line-height:1.7; -webkit-font-smoothing:antialiased; transition:background .25s,color .25s;}
+::selection{background:var(--accent); color:#fff;}
+a{color:inherit;}
+img{max-width:100%; display:block;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 40px;}
+section{padding:120px 0;}
+@media(max-width:900px){section{padding:80px 0;}}
+@media(max-width:640px){section{padding:60px 0;} .wrap{padding:0 24px;}}
+
+.t-en{display:none;}
+html[lang="en"] .t-en{display:inline;}
+html[lang="en"] .t-es{display:none;}
+
+.label{font-family:var(--sans); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; display:block; font-weight:500;}
+.eyebrow{font-family:var(--sans); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; display:block; font-weight:500;}
+h1,h2,h3{font-family:var(--serif); font-weight:400; letter-spacing:-.01em;}
+h2{font-size:clamp(26px,3.4vw,38px); font-weight:400;}
+h2 em, h1 em{font-style:italic; color:var(--accent); font-weight:400;}
+.section-head{margin-bottom:56px; max-width:680px;}
+.section-head p{color:var(--ink-soft); margin-top:14px; font-size:16px; font-weight:300;}
+
+/* ===== links / buttons ===== */
+.btn{font-family:var(--sans); font-size:13.5px; letter-spacing:.03em; text-decoration:none; display:inline-block; padding:14px 26px; border:1px solid transparent;}
+.btn-primary{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+.btn-primary:hover{opacity:.85;}
+.btn-line{border-color:var(--line); color:var(--ink);}
+.btn-line:hover{border-color:var(--accent); color:var(--accent);}
+
+/* ===== Nav ===== */
+header{position:absolute; top:0; left:0; right:0; z-index:60; padding:8px 0;}
+header.solid{position:sticky; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:22px 0;}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--serif); font-size:19px; letter-spacing:.01em;}
+.navlinks{display:flex; gap:36px; font-size:13.5px; list-style:none; font-family:var(--sans);}
+.navlinks a{text-decoration:none; letter-spacing:.02em; border-bottom:1px solid transparent;}
+.navlinks a:hover{border-color:currentColor;}
+.navctrl{display:flex; gap:16px; align-items:center; font-family:var(--sans);}
+.ctrlbtn{font-size:11px; letter-spacing:.06em; border:none; background:transparent; cursor:pointer; opacity:.75; color:inherit;}
+.ctrlbtn:hover{opacity:1;}
+.btn-cv{font-family:var(--sans); font-size:12.5px; letter-spacing:.03em; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; white-space:nowrap;}
+.hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+.hamburger span{width:22px; height:1.5px; background:var(--ink);}
+.hero-nav-zone .hamburger span{background:#fff;}
+.mobile-menu{display:none; flex-direction:column; position:fixed; inset:0; background:var(--bg); z-index:99; padding:100px 32px 40px; font-family:var(--serif); font-size:22px;}
+.mobile-menu a{padding:16px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink);}
+.mobile-menu.open{display:flex;}
+@media(max-width:900px){.navlinks{display:none;} .hamburger{display:flex;}}
+@media(max-width:560px){.btn-cv{display:none;}}
+.hero-nav-zone header .brand, .hero-nav-zone header a, .hero-nav-zone header button{color:#fff;}
+
+/* ===== Hero — full-bleed photo ===== */
+.hero{position:relative; min-height:92vh; display:flex; align-items:flex-end; overflow:hidden; background:linear-gradient(155deg,#2B2419,#181510);}
+.hero-bg{position:absolute; inset:0;}
+.hero-bg img{width:100%; height:100%; object-fit:cover; object-position:center 22%;}
+.hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,17,12,.18) 0%, rgba(20,17,12,.2) 42%, rgba(15,12,8,.88) 100%);}
+.hero-inner{position:relative; z-index:2; color:#fff; padding-bottom:80px; width:100%;}
+.hero .hola{font-family:var(--sans); font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:#E7C9A6; margin-bottom:20px; display:block;}
+.hero h1{font-size:clamp(48px,8.4vw,110px); line-height:.96; font-weight:400; margin-bottom:24px;}
+.hero p.lead{max-width:500px; color:rgba(255,255,255,.85); font-size:17px; font-weight:300; margin-bottom:38px;}
+.hero-actions{display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+.hero-actions .btn-primary{background:#fff; color:#181510; border-color:#fff;}
+.hero-actions .btn-line{border-color:rgba(255,255,255,.55); color:#fff;}
+.hero-actions .btn-line:hover{border-color:#fff; color:#fff; opacity:.85;}
+.scroll-cue{position:absolute; right:40px; bottom:36px; z-index:2; color:rgba(255,255,255,.6); font-family:var(--sans); font-size:11px; letter-spacing:.14em; writing-mode:vertical-rl; text-transform:uppercase;}
+@media(max-width:640px){.scroll-cue{display:none;} .hero-inner{padding-bottom:56px;}}
+
+/* ===== Intro statement ===== */
+.statement{max-width:760px;}
+.statement p{color:var(--ink-soft); font-size:18px; font-weight:300; margin-bottom:22px; line-height:1.75;}
+.statement p:first-child{font-family:var(--serif); font-style:italic; font-size:24px; color:var(--ink); line-height:1.5;}
+
+/* ===== About photo + traits ===== */
+.about-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:center;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr; gap:36px;}}
+.about-photo{aspect-ratio:4/5; background:linear-gradient(155deg,var(--bg-2),var(--accent-soft));}
+.about-photo img{width:100%; height:100%; object-fit:cover;}
+.about-copy p{color:var(--ink-soft); font-size:16.5px; font-weight:300; max-width:560px; margin-bottom:8px;}
+.traits{display:flex; flex-wrap:wrap; gap:0; margin-top:36px; border-top:1px solid var(--line);}
+.trait{flex:1; min-width:150px; padding:20px 20px 0 0;}
+.trait .k{font-family:var(--sans); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:6px;}
+.trait .v{font-family:var(--serif); font-style:italic; font-size:17px; color:var(--ink);}
+
+/* ===== Projects ===== */
+.projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:60px 40px;}
+@media(max-width:760px){.projects-grid{grid-template-columns:1fr; gap:44px;}}
+.pcard{text-decoration:none; color:var(--ink); display:block;}
+.pcard .thumb{aspect-ratio:4/3; background:linear-gradient(155deg,var(--bg-2),var(--accent-soft)); overflow:hidden; margin-bottom:20px;}
+.pcard .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+.pcard:hover .thumb img{transform:scale(1.035);}
+.pcard .meta-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:8px;}
+.pcard h3{font-size:18px; font-weight:400; line-height:1.3;}
+.pcard .yr{font-family:var(--sans); font-size:12px; color:var(--ink-faint); white-space:nowrap;}
+.pcard p{font-size:14px; color:var(--ink-soft); margin-bottom:10px; font-weight:300;}
+.pcard .tags{font-family:var(--sans); font-size:11.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint);}
+
+/* project detail (proyectos.md) */
+.case{display:grid; grid-template-columns:1fr 1.4fr; gap:44px; padding:52px 0; border-top:1px solid var(--line); align-items:start;}
+.case:last-of-type{border-bottom:1px solid var(--line);}
+@media(max-width:800px){.case{grid-template-columns:1fr; gap:22px;}}
+.case-thumb{aspect-ratio:4/3; background:linear-gradient(155deg,var(--bg-2),var(--accent-soft)); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-size:26px; color:var(--ink-faint); overflow:hidden;}
+.case-eyebrow{font-family:var(--sans); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+.case h3{font-size:24px; margin-bottom:14px; font-weight:400;}
+.case p{color:var(--ink-soft); margin-bottom:14px; font-size:15.5px; font-weight:300;}
+.case-tags{font-family:var(--sans); font-size:12px; letter-spacing:.04em; color:var(--ink-faint); margin-bottom:10px; text-transform:uppercase;}
+.case-result{font-family:var(--serif); font-style:italic; font-size:17px; color:var(--accent); margin-bottom:6px;}
+.case-meta{font-size:12.5px; color:var(--ink-faint); margin-top:6px; font-family:var(--sans);}
+
+/* ===== Methodology ===== */
+.method{margin-top:8px;}
+.mstep{display:grid; grid-template-columns:76px 1fr; gap:28px; padding:30px 0; border-top:1px solid var(--line);}
+.method .mstep:last-child{border-bottom:1px solid var(--line);}
+@media(max-width:700px){.mstep{grid-template-columns:44px 1fr;}}
+.mstep .n{font-family:var(--serif); font-style:italic; font-size:28px; color:var(--accent);}
+.mstep h4{font-size:16px; font-weight:500; font-family:var(--sans); letter-spacing:.01em; margin-bottom:8px;}
+.mstep p{color:var(--ink-soft); font-size:14.5px; font-weight:300; max-width:560px;}
+
+/* ===== International experience ===== */
+.exp-list{margin-top:8px;}
+.exp-row{display:grid; grid-template-columns:160px 1fr 140px; gap:24px; padding:24px 0; border-top:1px solid var(--line); align-items:baseline;}
+.exp-list .exp-row:last-child{border-bottom:1px solid var(--line);}
+@media(max-width:700px){.exp-row{grid-template-columns:1fr; gap:6px; padding:20px 0;}}
+.exp-row .country{font-family:var(--serif); font-style:italic; font-size:18px;}
+.exp-row .role{color:var(--ink); font-size:14.5px; font-weight:400;}
+.exp-row .sector{color:var(--ink-soft); font-size:13.5px; font-weight:300;}
+.exp-row .period{font-family:var(--sans); font-size:12.5px; color:var(--ink-faint); text-align:right;}
+@media(max-width:700px){.exp-row .period{text-align:left;}}
+
+/* ===== Services ===== */
+.services-list .srow{display:grid; grid-template-columns:1fr 1.6fr .9fr; gap:28px; padding:28px 0; border-top:1px solid var(--line); align-items:baseline;}
+.services-list .srow:last-child{border-bottom:1px solid var(--line);}
+@media(max-width:800px){.services-list .srow{grid-template-columns:1fr; gap:8px;}}
+.srow h3{font-size:17px; font-weight:400;}
+.srow p{color:var(--ink-soft); font-size:14.5px; font-weight:300;}
+.srow .deliv{font-family:var(--sans); font-size:12px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.03em;}
+.service-note{font-size:13px; color:var(--ink-faint); margin-top:26px; font-family:var(--sans); font-weight:300;}
+
+/* ===== Skills ===== */
+.skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:44px;}
+@media(max-width:800px){.skills-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.skills-grid{grid-template-columns:1fr;}}
+.skill-col ul{list-style:none;}
+.skill-col li{padding:9px 0; border-top:1px solid var(--line); font-size:14.5px; color:var(--ink-soft); font-weight:300;}
+
+/* ===== Education / academic goals ===== */
+.edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+@media(max-width:800px){.edu-grid{grid-template-columns:1fr; gap:40px;}}
+.cred{display:flex; justify-content:space-between; gap:12px; padding:13px 0; border-top:1px solid var(--line); font-weight:300;}
+.cred:first-child{border-top:none;}
+.cred .name{font-size:14px;}
+.cred .org{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+.cred .year{font-family:var(--sans); font-size:11.5px; color:var(--ink-faint); white-space:nowrap;}
+.goal-item{position:relative; color:var(--ink-soft); font-size:14.5px; font-weight:300; border-top:1px solid var(--line); padding:16px 0;}
+.goal-item:first-child{border-top:none; padding-top:0;}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:72px;}
+@media(max-width:840px){.contact-grid{grid-template-columns:1fr; gap:40px;}}
+.contact-info p{color:var(--ink-soft); margin-bottom:28px; max-width:400px; font-size:15.5px; font-weight:300;}
+.contact-line{display:flex; gap:12px; align-items:baseline; margin-bottom:12px; font-size:15px;}
+.contact-line .k{font-family:var(--sans); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); width:80px; flex-shrink:0;}
+.contact-line a{font-family:var(--serif); font-style:italic; font-size:17px; text-decoration:none; border-bottom:1px solid transparent;}
+.contact-line a:hover{border-color:var(--accent); color:var(--accent);}
+form{display:flex; flex-direction:column; gap:24px;}
+label{font-family:var(--sans); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:8px; display:block;}
+input,select,textarea{width:100%; background:transparent; border:none; border-bottom:1px solid var(--line); border-radius:0; padding:8px 0; font-family:var(--sans); font-weight:300; font-size:15px; color:var(--ink);}
+textarea{resize:vertical; min-height:80px;}
+input:focus,select:focus,textarea:focus{outline:none; border-color:var(--accent);}
+select{appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%235F5A4E'><path d='M5 7l5 5 5-5'/></svg>"); background-repeat:no-repeat; background-position:right 2px center;}
+.field{display:flex; flex-direction:column;}
+.formnote{font-size:12px; color:var(--ink-faint); margin-top:2px; font-family:var(--sans);}
+form button{align-self:flex-start; margin-top:4px; cursor:pointer;}
+
+footer{border-top:1px solid var(--line); padding:36px 0; font-size:12.5px; color:var(--ink-faint); font-family:var(--sans);}
+.footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center;}
+.footer-links{display:flex; gap:20px;}
+.footer-links a{text-decoration:none; color:var(--ink-faint); letter-spacing:.02em;}
+.footer-links a:hover{color:var(--accent);}
+
+/* ===== Blog list ===== */
+.blog-container{max-width:760px; margin:0 auto; padding:150px 32px 120px;}
+.blog-header{margin-bottom:60px;}
+.blog-header h1{font-size:clamp(32px,4.4vw,50px); line-height:1.1; margin-bottom:16px; font-weight:400;}
+.blog-header p{font-size:16px; color:var(--ink-soft); font-weight:300; max-width:480px;}
+.post-list{list-style:none;}
+.post-list-item{border-top:1px solid var(--line); padding:34px 0;}
+.post-list-item:last-child{border-bottom:1px solid var(--line);}
+.post-list-date{font-family:var(--sans); font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px;}
+.post-list-title{font-family:var(--serif); font-size:24px; font-weight:400; margin-bottom:10px;}
+.post-list-title a{color:var(--ink); text-decoration:none;}
+.post-list-title a:hover{color:var(--accent);}
+.post-list-excerpt{font-size:14.5px; color:var(--ink-soft); margin-bottom:12px; font-weight:300;}
+.read-more{font-family:var(--sans); font-size:12.5px; text-decoration:none; color:var(--accent); border-bottom:1px solid var(--accent); padding-bottom:1px;}
+.empty-note{color:var(--ink-faint); font-size:14px; font-family:var(--sans);}
+
+/* ===== Blog post ===== */
+.post-container{max-width:700px; margin:0 auto; padding:150px 32px 120px;}
+.back-link{font-family:var(--sans); font-size:12.5px; text-decoration:none; color:var(--ink-soft); display:inline-block; margin-bottom:30px;}
+.back-link:hover{color:var(--accent);}
+.post-title{font-family:var(--serif); font-size:clamp(28px,4.4vw,46px); line-height:1.14; margin-bottom:16px; font-weight:400;}
+.post-meta{font-family:var(--sans); font-size:12.5px; color:var(--ink-faint); margin-bottom:44px; padding-bottom:30px; border-bottom:1px solid var(--line);}
+.post-body{font-size:17px; color:var(--ink-soft); line-height:1.9; font-weight:300;}
+.post-body h2{font-family:var(--serif); font-size:26px; color:var(--ink); margin:42px 0 16px; font-weight:400;}
+.post-body h3{font-family:var(--serif); font-size:20px; color:var(--ink); margin:30px 0 14px; font-weight:400;}
+.post-body p{margin-bottom:20px;}
+.post-body strong{color:var(--ink); font-weight:500;}
+.post-body ul,.post-body ol{margin:0 0 20px 22px;}
+.post-body li{margin-bottom:9px;}
+.post-body blockquote{border-left:2px solid var(--accent); padding:6px 0 6px 24px; margin:28px 0; font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink);}
+
+@media(max-width:720px){
+  .blog-container,.post-container{padding:110px 22px 72px;}
+}
+
+</style>
+
+</head>
+<body class="hero-nav-zone">
+
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="/" class="brand">Jorge Palacio</a>
+    <ul class="navlinks">
+      <li><a href="/#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a></li>
+      <li><a href="/#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a></li>
+      <li><a href="/#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a></li>
+      <li><a href="/#educacion"><span class="t-es">Educación</span><span class="t-en">Education</span></a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contacto"><span class="t-es">Contacto</span><span class="t-en">Contact</span></a></li>
+    </ul>
+    <div class="navctrl">
+      <button class="ctrlbtn" id="langBtn" aria-label="Toggle language">ES/EN</button>
+      <button class="ctrlbtn" id="themeBtn" aria-label="Toggle theme">☾/☀</button>
+      <a class="btn-cv" href="/assets/files/CV-Jorge-Palacio.pdf" target="_blank" rel="noopener"><span class="t-es">CV</span><span class="t-en">Resume</span></a>
+      <button class="hamburger" id="hamBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#about"><span class="t-es">Sobre mí</span><span class="t-en">About</span></a>
+  <a href="/#proyectos"><span class="t-es">Proyectos</span><span class="t-en">Projects</span></a>
+  <a href="/#experiencia"><span class="t-es">Experiencia</span><span class="t-en">Experience</span></a>
+  <a href="/#educacion"><span class="t-es">Educación</span><span class="t-en">Education</span></a>
+  <a href="/blog/">Blog</a>
+  <a href="/#contacto"><span class="t-es">Contacto</span><span class="t-en">Contact</span></a>
+  <a href="/assets/files/CV-Jorge-Palacio.pdf" target="_blank" rel="noopener"><span class="t-es">Descargar CV</span><span class="t-en">Download resume</span></a>
+</div>
+
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="/assets/img/hero.jpg" alt="Jorge Palacio" onerror="this.style.display='none'">
+  </div>
+  <div class="wrap hero-inner">
+    <span class="hola"><span class="t-es">Ingeniero Industrial · Lima, Perú</span><span class="t-en">Industrial Engineer · Lima, Peru</span></span>
+    <h1>Jorge<br>Palacio</h1>
+    <p class="lead">
+      <span class="t-es">Proceso, datos y automatización al servicio de decisiones más claras — en consultoría, en una empresa, o en la siguiente etapa de mi formación.</span>
+      <span class="t-en">Process, data, and automation in service of clearer decisions — in consulting, inside a company, or in the next stage of my education.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#proyectos" class="btn btn-primary"><span class="t-es">Ver proyectos</span><span class="t-en">View projects</span></a>
+      <a href="/assets/files/CV-Jorge-Palacio.pdf" target="_blank" rel="noopener" class="btn btn-line"><span class="t-es">Descargar CV</span><span class="t-en">Download CV</span></a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="t-es">Desplázate</span><span class="t-en">Scroll</span></div>
+</section>
+
+<!-- ===== INTRO STATEMENT ===== -->
+<section id="about">
+  <div class="wrap">
+    <span class="label"><span class="t-es">Sobre mí</span><span class="t-en">About</span></span>
+    <div class="statement">
+      <p>
+        <span class="t-es">Creo que la mayoría de los problemas de una organización no son de estrategia — son de proceso. Cosas que nadie documentó, datos que nadie registró, pasos que se repiten distinto según quién los haga.</span>
+        <span class="t-en">I believe most of an organization's problems aren't strategic — they're procedural. Things nobody documented, data nobody recorded, steps that get done differently depending on who's doing them.</span>
+      </p>
+      <p>
+        <span class="t-es">Soy Ingeniero Industrial (Universidad Católica de Santa María) con experiencia trabajando dentro de operaciones reales en Perú, Nueva Zelanda y Australia — desde plantas agroindustriales hasta líneas de producción a escala. Combino ese trabajo de campo con herramientas de datos (Excel avanzado, Power BI) y, más recientemente, automatización con IA. Hoy busco la siguiente etapa: un rol donde ese criterio aporte desde el primer día, o un programa de posgrado que lo profundice.</span>
+        <span class="t-en">I'm an Industrial Engineer (Universidad Católica de Santa María) with hands-on experience across real operations in Peru, New Zealand, and Australia — from agro-industrial plants to scaled production lines. I combine that fieldwork with data tools (advanced Excel, Power BI) and, more recently, AI-driven automation. Right now I'm looking for the next step: a role where that judgment adds value from day one, or a graduate program that deepens it.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT PHOTO + TRAITS ===== -->
+<section style="padding-top:0;">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="/assets/img/about.jpg" alt="Jorge Palacio trabajando" onerror="this.style.display='none'">
+    </div>
+    <div class="about-copy">
+      <p>
+        <span class="t-es">Mi tesis de pregrado fue un plan de negocio de ingeniería completo para una planta de acuicultura marina — estudio de mercado, diseño de planta, evaluación económica con simulación Montecarlo. Esa mezcla de rigor técnico y pensamiento de negocio es el hilo que atraviesa todo lo que hago desde entonces.</span>
+        <span class="t-en">My undergraduate thesis was a complete engineering business plan for a marine aquaculture plant — market study, plant design, economic evaluation with Monte Carlo simulation. That mix of technical rigor and business thinking is the thread running through everything I've done since.</span>
+      </p>
+      <div class="traits">
+        <div class="trait"><div class="k"><span class="t-es">Enfoque</span><span class="t-en">Focus</span></div><div class="v"><span class="t-es">Resultados medibles</span><span class="t-en">Measurable results</span></div></div>
+        <div class="trait"><div class="k"><span class="t-es">Método</span><span class="t-en">Method</span></div><div class="v"><span class="t-es">Mejora continua</span><span class="t-en">Continuous improvement</span></div></div>
+        <div class="trait"><div class="k"><span class="t-es">Herramientas</span><span class="t-en">Tools</span></div><div class="v"><span class="t-es">Automatización e IA</span><span class="t-en">Automation & AI</span></div></div>
+        <div class="trait"><div class="k"><span class="t-es">Estilo</span><span class="t-en">Style</span></div><div class="v"><span class="t-es">Trabajo colaborativo</span><span class="t-en">Collaborative</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label"><span class="t-es">Proyectos destacados</span><span class="t-en">Featured projects</span></span>
+      <h2><span class="t-es">Trabajo reciente</span><span class="t-en">Recent work</span></h2>
+      <p><span class="t-es">Proyectos verificables. Donde hay una cifra, es una cifra real.</span><span class="t-en">Verifiable projects. Where there's a number, it's a real one.</span></p>
+    </div>
+
+    <div class="projects-grid">
+      <a href="/proyectos/#automatizacion" class="pcard">
+        <div class="thumb"><img src="/assets/img/proyectos/automatizacion.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="meta-row"><h3><span class="t-es">Automatización con Make y n8n</span><span class="t-en">Automation with Make & n8n</span></h3><span class="yr">2025</span></div>
+        <p><span class="t-es">Lectura de correos, extracción de datos con IA y almacenamiento automático en Google Sheets.</span><span class="t-en">Email parsing, AI-driven data extraction, and automatic storage in Google Sheets.</span></p>
+        <div class="tags"><span class="t-es">Automatización</span><span class="t-en">Automation</span> · Make · n8n</div>
+      </a>
+      <a href="/proyectos/#dashboard" class="pcard">
+        <div class="thumb"><img src="/assets/img/proyectos/dashboard.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="meta-row"><h3><span class="t-es">Dashboard de indicadores operativos</span><span class="t-en">Operations KPI dashboard</span></h3><span class="yr">2024</span></div>
+        <p><span class="t-es">Seguimiento de KPIs de producción y calidad en tiempo real, por turno, línea y producto.</span><span class="t-en">Real-time production and quality KPI tracking, by shift, line, and product.</span></p>
+        <div class="tags">Power BI · <span class="t-es">Análisis de datos</span><span class="t-en">Data analysis</span></div>
+      </a>
+      <a href="/proyectos/#lean" class="pcard">
+        <div class="thumb"><img src="/assets/img/proyectos/lean.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="meta-row"><h3><span class="t-es">Mejora de flujo de proceso (Lean)</span><span class="t-en">Process flow improvement (Lean)</span></h3><span class="yr">2022–23</span></div>
+        <p><span class="t-es">Herramientas Lean para reducir tiempos de ciclo y eliminar desperdicio en línea de producción.</span><span class="t-en">Lean tools to reduce cycle times and eliminate waste on a production line.</span></p>
+        <div class="tags">Lean · VSM · 5S</div>
+      </a>
+      <a href="/proyectos/#ia" class="pcard">
+        <div class="thumb"><img src="/assets/img/proyectos/ia.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="meta-row"><h3><span class="t-es">Integración de IA en procesos de negocio</span><span class="t-en">AI integration in business processes</span></h3><span class="yr">2025</span></div>
+        <p><span class="t-es">Modelos de lenguaje locales para extracción y clasificación automática de datos.</span><span class="t-en">Local language models for automatic data extraction and classification.</span></p>
+        <div class="tags">IA · Python · LLM</div>
+      </a>
+    </div>
+    <p style="margin-top:52px;"><a href="/proyectos/" class="btn btn-line" style="color:var(--ink); border-color:var(--line);"><span class="t-es">Ver todos los proyectos</span><span class="t-en">View all projects</span> →</a></p>
+  </div>
+</section>
+
+<!-- ===== METHODOLOGY ===== -->
+<section>
+  <div class="wrap">
+    <span class="label"><span class="t-es">Cómo trabajo</span><span class="t-en">How I work</span></span>
+    <h2 style="margin-bottom:8px;"><span class="t-es">Un método, no una fórmula.</span><span class="t-en">A method, not a formula.</span></h2>
+    <div class="method">
+      <div class="mstep"><div class="n">01</div><div><h4><span class="t-es">Diagnóstico</span><span class="t-en">Diagnosis</span></h4><p><span class="t-es">Entrevisto, observo y levanto lo que realmente pasa — no lo que dice el manual.</span><span class="t-en">Interview, observe, and surface what's actually happening — not what the manual says.</span></p></div></div>
+      <div class="mstep"><div class="n">02</div><div><h4><span class="t-es">Mapeo & datos</span><span class="t-en">Mapping & data</span></h4><p><span class="t-es">Construyo el registro que no existía y mapeo el proceso con BPMN/SIPOC.</span><span class="t-en">Build the record that didn't exist, and map the process with BPMN/SIPOC.</span></p></div></div>
+      <div class="mstep"><div class="n">03</div><div><h4><span class="t-es">Rediseño</span><span class="t-en">Redesign</span></h4><p><span class="t-es">Propongo el cambio priorizado por impacto y viabilidad real, no por moda.</span><span class="t-en">Propose the change prioritized by impact and real feasibility, not by trend.</span></p></div></div>
+      <div class="mstep"><div class="n">04</div><div><h4><span class="t-es">Medición</span><span class="t-en">Measurement</span></h4><p><span class="t-es">Defino el KPI que confirma si el cambio funcionó, y hago seguimiento.</span><span class="t-en">Define the KPI that confirms the change worked, and follow up.</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERNATIONAL EXPERIENCE ===== -->
+<section id="experiencia">
+  <div class="wrap">
+    <span class="label"><span class="t-es">Experiencia internacional</span><span class="t-en">International experience</span></span>
+    <h2 style="margin-bottom:8px;"><span class="t-es">Tres países, una misma disciplina.</span><span class="t-en">Three countries, one discipline.</span></h2>
+    <div class="exp-list">
+      <div class="exp-row">
+        <div class="country">🇵🇪 <span class="t-es">Perú</span><span class="t-en">Peru</span></div>
+        <div><div class="role"><span class="t-es">Ingeniero de Procesos</span><span class="t-en">Process Engineer</span></div><div class="sector"><span class="t-es">Sector industrial y agroexportador</span><span class="t-en">Industrial & agro-export sector</span></div></div>
+        <div class="period">2016 – 2018</div>
+      </div>
+      <div class="exp-row">
+        <div class="country">🇳🇿 <span class="t-es">Nueva Zelanda</span><span class="t-en">New Zealand</span></div>
+        <div><div class="role">Process Improvement Technician</div><div class="sector"><span class="t-es">Sector lácteo</span><span class="t-en">Dairy sector</span></div></div>
+        <div class="period">2019 – 2021</div>
+      </div>
+      <div class="exp-row">
+        <div class="country">🇦🇺 Australia</div>
+        <div><div class="role">Production Team Leader</div><div class="sector"><span class="t-es">Sector alimentario</span><span class="t-en">Food sector</span></div></div>
+        <div class="period">2022 – 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="servicios">
+  <div class="wrap">
+    <span class="label"><span class="t-es">Servicios</span><span class="t-en">Services</span></span>
+    <h2 style="margin-bottom:8px;"><span class="t-es">Para negocios que necesitan claridad sobre sus propios procesos.</span><span class="t-en">For businesses that need clarity on their own processes.</span></h2>
+    <div class="services-list">
+      <div class="srow">
+        <h3><span class="t-es">Dashboards en Excel & Power BI</span><span class="t-en">Excel & Power BI dashboards</span></h3>
+        <p><span class="t-es">Convierto tus datos operativos en un tablero claro para tomar decisiones — ventas, inventario, producción o calidad.</span><span class="t-en">I turn your operational data into a clear decision-making dashboard — sales, inventory, production, or quality.</span></p>
+        <div class="deliv"><span class="t-es">Archivo editable + guía</span><span class="t-en">Editable file + guide</span></div>
+      </div>
+      <div class="srow">
+        <h3><span class="t-es">Documentación de procesos & SOPs</span><span class="t-en">Process documentation & SOPs</span></h3>
+        <p><span class="t-es">Levanto y documento procesos que hoy solo existen en la cabeza de tu equipo — mapas BPMN, manuales de funciones.</span><span class="t-en">I surface and document processes that today only exist in your team's heads — BPMN maps, function manuals.</span></p>
+        <div class="deliv"><span class="t-es">Mapas BPMN + manual PDF</span><span class="t-en">BPMN maps + PDF manual</span></div>
+      </div>
+      <div class="srow">
+        <h3><span class="t-es">Automatización con IA (Make / n8n)</span><span class="t-en">AI automation (Make / n8n)</span></h3>
+        <p><span class="t-es">Flujos automatizados que conectan correo, hojas de cálculo y modelos de IA para eliminar trabajo manual repetitivo.</span><span class="t-en">Automated flows connecting email, spreadsheets, and AI models to remove repetitive manual work.</span></p>
+        <div class="deliv"><span class="t-es">Flujo funcionando + docs</span><span class="t-en">Working flow + docs</span></div>
+      </div>
+    </div>
+    <div class="service-note"><span class="t-es">Proyectos puntuales, remotos o en Lima. Escríbeme directo para conversar alcance y tiempos.</span><span class="t-en">One-off projects, remote or in Lima. Reach out directly to talk scope and timing.</span></div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="habilidades">
+  <div class="wrap">
+    <span class="label"><span class="t-es">Habilidades</span><span class="t-en">Skills</span></span>
+    <h2 style="margin-bottom:8px;"><span class="t-es">Construido con trabajo real, no solo cursos.</span><span class="t-en">Built through real work, not just coursework.</span></h2>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <span class="label"><span class="t-es">Procesos</span><span class="t-en">Process</span></span>
+        <ul>
+          <li>BPM / SIPOC</li>
+          <li>Lean Thinking</li>
+          <li><span class="t-es">Mejora continua</span><span class="t-en">Continuous improvement</span></li>
+          <li><span class="t-es">Manuales de funciones (MOF)</span><span class="t-en">Function manuals (MOF)</span></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <span class="label"><span class="t-es">Datos & herramientas</span><span class="t-en">Data & tools</span></span>
+        <ul>
+          <li>Excel <span class="t-es">avanzado</span><span class="t-en">advanced</span></li>
+          <li>Power BI</li>
+          <li>MS Project</li>
+          <li><span class="t-es">Simulación Montecarlo</span><span class="t-en">Monte Carlo simulation</span></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <span class="label"><span class="t-es">Operaciones</span><span class="t-en">Operations</span></span>
+        <ul>
+          <li><span class="t-es">Gestión de calidad</span><span class="t-en">Quality management</span></li>
+          <li>E-commerce</li>
+          <li><span class="t-es">Logística integral</span><span class="t-en">End-to-end logistics</span></li>
+          <li><span class="t-es">Liderazgo de equipos</span><span class="t-en">Team leadership</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION & ACADEMIC GOALS ===== -->
+<section id="educacion">
+  <div class="wrap edu-grid">
+    <div>
+      <span class="label"><span class="t-es">Educación y certificaciones</span><span class="t-en">Education & certifications</span></span>
+      <h2 style="margin-bottom:8px; font-size:26px;"><span class="t-es">Formación</span><span class="t-en">Education</span></h2>
+      <div class="cred"><div><div class="name">Bachiller — <span class="t-es">Ingeniería Industrial</span><span class="t-en">Industrial Engineering</span></div><div class="org">Universidad Católica de Santa María, Arequipa</div></div><div class="year">2010–2014</div></div>
+      <div class="cred"><div><div class="name">Diploma — Lean Supply Chain & Logistics</div><div class="org">ESAN, Lima</div></div><div class="year">2018</div></div>
+      <div class="cred"><div><div class="name">ISO 9001:2015</div><div class="org">CIENCI</div></div><div class="year">2019</div></div>
+      <div class="cred"><div><div class="name">Business Process Management (BPM)</div><div class="org">UPAL</div></div><div class="year">2020</div></div>
+      <div class="cred"><div><div class="name"><span class="t-es">Certificación</span><span class="t-en">Certification</span> Make</div><div class="org">Make Academy</div></div><div class="year">2025</div></div>
+      <div class="cred"><div><div class="name">IELTS 6.5</div><div class="org">British Council</div></div><div class="year">—</div></div>
+    </div>
+    <div>
+      <span class="label"><span class="t-es">Objetivos académicos</span><span class="t-en">Academic goals</span></span>
+      <h2 style="margin-bottom:8px; font-size:26px;"><span class="t-es">Hacia dónde voy</span><span class="t-en">Where I'm headed</span></h2>
+      <div class="goal-item"><span class="t-es">Maestría en Ingeniería Industrial o Gestión de Operaciones.</span><span class="t-en">Master's in Industrial Engineering or Operations Management.</span></div>
+      <div class="goal-item"><span class="t-es">Especialización en Ciencia de Datos o Inteligencia Artificial.</span><span class="t-en">Specialization in Data Science or Artificial Intelligence.</span></div>
+      <div class="goal-item"><span class="t-es">Contribuir a la investigación y al desarrollo de soluciones innovadoras.</span><span class="t-en">Contribute to research and the development of innovative solutions.</span></div>
+      <div class="goal-item"><span class="t-es">Interesado en programas de beca completa o parcial en el extranjero.</span><span class="t-en">Interested in full or partial scholarship programs abroad.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contacto">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="label"><span class="t-es">Contacto</span><span class="t-en">Contact</span></span>
+      <h2 style="margin-bottom:24px;"><span class="t-es">Hablemos de lo que estás construyendo.</span><span class="t-en">Let's talk about what you're building.</span></h2>
+      <p><span class="t-es">Respondo en menos de 24 horas. Cuéntame si me escribes por una oportunidad laboral, un proyecto de consultoría o un programa de maestría/beca.</span><span class="t-en">I respond within 24 hours. Let me know if you're reaching out about a job, a consulting project, or a master's/scholarship program.</span></p>
+      <div class="contact-line"><span class="k">Email</span><a href="mailto:jorgepalaciote@gmail.com">jorgepalaciote@gmail.com</a></div>
+      <div class="contact-line"><span class="k">WhatsApp</span><a href="https://wa.me/51912000480" target="_blank" rel="noopener">+51 912 000 480</a></div>
+      <div class="contact-line"><span class="k">LinkedIn</span><a href="https://linkedin.com/in/jorgepalaciot" target="_blank" rel="noopener">linkedin.com/in/jorgepalaciot</a></div>
+    </div>
+    <form id="contactForm">
+      <div class="field">
+        <label for="ctxSelect"><span class="t-es">Escribo por</span><span class="t-en">I'm reaching out about</span></label>
+        <select id="ctxSelect">
+          <option value="empleo"><span class="t-es">Oportunidad laboral</span></option>
+          <option value="proyecto"><span class="t-es">Proyecto / consultoría</span></option>
+          <option value="academico"><span class="t-es">Maestría, beca o colaboración académica</span></option>
+        </select>
+      </div>
+      <div class="field"><label for="nameIn"><span class="t-es">Nombre</span><span class="t-en">Name</span></label><input type="text" id="nameIn" required></div>
+      <div class="field"><label for="emailIn">Email</label><input type="email" id="emailIn" required></div>
+      <div class="field"><label for="msgIn"><span class="t-es">Mensaje</span><span class="t-en">Message</span></label><textarea id="msgIn" required></textarea></div>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start; color:var(--ink); border-color:var(--ink);"><span class="t-es">Enviar</span><span class="t-en">Send</span> →</button>
+      <div class="formnote"><span class="t-es">Se abrirá tu cliente de correo con el mensaje pre-armado.</span><span class="t-en">This opens your email client with the message pre-filled.</span></div>
+    </form>
+  </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const ctx = document.getElementById('ctxSelect').selectedOptions[0].textContent.trim();
+  const name = document.getElementById('nameIn').value;
+  const email = document.getElementById('emailIn').value;
+  const msg = document.getElementById('msgIn').value;
+  const subject = encodeURIComponent('Contacto desde el sitio — ' + ctx);
+  const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\nContexto: ${ctx}\n\n${msg}`);
+  window.location.href = `mailto:jorgepalaciote@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="curYear">2026</span> Jorge Palacio · Lima, Perú</span>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/jorgepalaciot" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Jorgepalaciot" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:jorgepalaciote@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('curYear').textContent = new Date().getFullYear();
+
+const savedLang = localStorage.getItem('lang');
+if(savedLang){ document.documentElement.lang = savedLang; }
+else{
+  const browserLang = (navigator.language || 'es').toLowerCase();
+  document.documentElement.lang = browserLang.startsWith('en') ? 'en' : 'es';
+}
+document.getElementById('langBtn').addEventListener('click', () => {
+  const next = document.documentElement.lang === 'es' ? 'en' : 'es';
+  document.documentElement.lang = next;
+  localStorage.setItem('lang', next);
+});
+
+const savedTheme = localStorage.getItem('theme');
+if(savedTheme){ document.documentElement.setAttribute('data-theme', savedTheme); }
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+const hamBtn = document.getElementById('hamBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamBtn.addEventListener('click', () => {
+  hamBtn.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamBtn.classList.remove('open'); mobileMenu.classList.remove('open');
+}));
+
+// header goes solid once the user scrolls past the hero (only relevant on homepage)
+const header = document.getElementById('siteHeader');
+const heroEl = document.querySelector('.hero');
+function updateHeader(){
+  if(!heroEl){ header.classList.add('solid'); header.style.position='sticky'; return; }
+  if(window.scrollY > heroEl.offsetHeight - 90){
+    header.classList.add('solid'); document.body.classList.remove('hero-nav-zone');
+  }else{
+    header.classList.remove('solid'); document.body.classList.add('hero-nav-zone');
+  }
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
+</script>
+</body>
+</html>
