@@ -11,14 +11,15 @@ description: Ingeniero Industrial especializado en procesos, automatización y d
     <div>
       <span class="hola"><span class="t-es">Ingeniero Industrial · Lima, Perú</span><span class="t-en">Industrial Engineer · Lima, Peru</span></span>
       <h1>Jorge Palacio</h1>
+      <div class="hero-rule"></div>
       <p class="lead">
-        <span class="t-es">Proceso, datos y automatización al servicio de decisiones más claras — en consultoría, en una empresa, o en la siguiente etapa de mi formación.</span>
-        <span class="t-en">Process, data, and automation in service of clearer decisions — in consulting, inside a company, or in the next stage of my education.</span>
+        <span class="t-es">Proceso, datos y automatización al servicio de decisiones más claras.</span>
+        <span class="t-en">Process, data, and automation in service of clearer decisions.</span>
       </p>
       <div class="availability">
         <span class="pill"><span class="t-es">Abierto a empleo</span><span class="t-en">Open to work</span></span>
-        <span class="pill"><span class="t-es">Consultoría independiente</span><span class="t-en">Independent consulting</span></span>
-        <span class="pill"><span class="t-es">Postulando a maestría</span><span class="t-en">Applying to grad school</span></span>
+        <span class="pill"><span class="t-es">Consultoría</span><span class="t-en">Consulting</span></span>
+        <span class="pill"><span class="t-es">Maestría / beca</span><span class="t-en">Grad school</span></span>
       </div>
       <div class="hero-actions">
         <a href="#proyectos" class="btn btn-primary"><span class="t-es">Ver proyectos</span><span class="t-en">View projects</span></a>
@@ -37,12 +38,12 @@ description: Ingeniero Industrial especializado en procesos, automatización y d
     <span class="label"><span class="t-es">Sobre mí</span><span class="t-en">About</span></span>
     <div class="statement">
       <p>
-        <span class="t-es">Creo que la mayoría de los problemas de una organización no son de estrategia — son de proceso. Cosas que nadie documentó, datos que nadie registró, pasos que se repiten distinto según quién los haga.</span>
-        <span class="t-en">I believe most of an organization's problems aren't strategic — they're procedural. Things nobody documented, data nobody recorded, steps that get done differently depending on who's doing them.</span>
+        <span class="t-es">Creo que la mayoría de los problemas de una organización no son de estrategia — son de proceso. Cosas que nadie documentó, datos que nadie registró.</span>
+        <span class="t-en">I believe most of an organization's problems aren't strategic — they're procedural. Things nobody documented, data nobody recorded.</span>
       </p>
       <p>
-        <span class="t-es">Soy Ingeniero Industrial (Universidad Católica de Santa María) con experiencia trabajando dentro de operaciones reales en Perú, Nueva Zelanda y Australia — desde plantas agroindustriales hasta líneas de producción a escala. Combino ese trabajo de campo con herramientas de datos (Excel avanzado, Power BI) y, más recientemente, automatización con IA. Hoy busco la siguiente etapa: un rol donde ese criterio aporte desde el primer día, o un programa de posgrado que lo profundice.</span>
-        <span class="t-en">I'm an Industrial Engineer (Universidad Católica de Santa María) with hands-on experience across real operations in Peru, New Zealand, and Australia — from agro-industrial plants to scaled production lines. I combine that fieldwork with data tools (advanced Excel, Power BI) and, more recently, AI-driven automation. Right now I'm looking for the next step: a role where that judgment adds value from day one, or a graduate program that deepens it.</span>
+        <span class="t-es">Ingeniero Industrial con experiencia real en Perú, Nueva Zelanda y Australia, combinada con herramientas de datos y automatización con IA. Hoy busco un rol donde ese criterio aporte desde el día uno, o un posgrado que lo profundice.</span>
+        <span class="t-en">Industrial Engineer with hands-on experience across Peru, New Zealand, and Australia, combined with data tools and AI-driven automation. Right now I'm looking for a role where that judgment adds value from day one, or a graduate program that deepens it.</span>
       </p>
     </div>
   </div>
