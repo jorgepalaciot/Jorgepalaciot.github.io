@@ -32,6 +32,23 @@
     });
   }
 
+  /* ---------- Header transparente sobre el hero ---------- */
+  var header = document.getElementById('site-header');
+  var hero = document.querySelector('.hero');
+  if (header && hero && document.body.classList.contains('has-hero')) {
+    var setHeaderState = function () {
+      var threshold = hero.offsetHeight - header.offsetHeight - 40;
+      if (window.scrollY > threshold) {
+        header.classList.add('is-solid');
+      } else {
+        header.classList.remove('is-solid');
+      }
+    };
+    setHeaderState();
+    window.addEventListener('scroll', setHeaderState, { passive: true });
+    window.addEventListener('resize', setHeaderState);
+  }
+
   /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {

@@ -39,7 +39,7 @@
     })();
   </script>
 </head>
-<body>
+<body class="{% if page.url == '/' %}has-hero{% endif %}">
 
   <a class="skip-link" href="#main">Saltar al contenido · Skip to content</a>
 
@@ -47,7 +47,7 @@
     <div class="wrap site-header-inner">
       <a class="brand" href="{{ '/' | relative_url }}">
         <span class="brand-mark">JP</span>
-        <span class="brand-word">JORGE PALACIO</span>
+        <span class="brand-word">Palacio Tello</span>
       </a>
 
       <nav class="site-nav" id="site-nav">
