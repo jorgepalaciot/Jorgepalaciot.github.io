@@ -1,26 +1,14 @@
 ---
 layout: default
 ---
-<article class="post">
-  <div class="wrap post-wrap">
-    <a class="back-link" href="{{ '/blog/' | relative_url }}">
-      <span class="lang-es">← Volver al blog</span><span class="lang-en">← Back to blog</span>
-    </a>
-
-    <header class="post-header">
-      <div class="post-date mono">{{ page.date | date: "%d %b %Y" }}</div>
-      <h1>{{ page.title }}</h1>
-      {% if page.description %}
-      <p class="post-excerpt muted">{{ page.description }}</p>
-      {% endif %}
-    </header>
-
-    <div class="post-content">
-      {{ content }}
-    </div>
-
-    <a class="back-link back-link--bottom" href="{{ '/blog/' | relative_url }}">
-      <span class="lang-es">← Volver al blog</span><span class="lang-en">← Back to blog</span>
-    </a>
+<div class="post-container">
+  <div class="post-header">
+    <a href="{{ '/blog/' | relative_url }}" class="back-link"><span class="t-es">← Volver al blog</span><span class="t-en">← Back to blog</span></a>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">{{ page.date | date: "%d %B %Y" }}</div>
   </div>
-</article>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <p style="margin-top:48px;"><a href="{{ '/blog/' | relative_url }}" class="back-link"><span class="t-es">← Volver al blog</span><span class="t-en">← Back to blog</span></a></p>
+</div>

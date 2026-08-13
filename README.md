@@ -1,64 +1,66 @@
-# jorgepalaciot.dev — sitio personal + blog
+# jorgepalaciot.github.io
 
-Sitio construido con **Jekyll**, pensado para publicarse gratis en **GitHub Pages**.
+Portafolio personal de Jorge Palacio — Ingeniero Industrial. Sitio hecho con Jekyll para GitHub Pages,
+bilingüe (ES/EN, autodetectado por el navegador) y con modo claro/oscuro automático.
 
 ## Estructura
 
 ```
-_config.yml        Configuración del sitio (título, descripción, permalinks)
-_layouts/
-  default.html      Plantilla base: header, nav, footer, toggles ES/EN y claro/oscuro
-  post.html          Plantilla de cada artículo del blog
-_posts/
-  AAAA-MM-DD-titulo.md   Un archivo por artículo (ver ejemplo incluido)
-assets/
-  styles.css         Todo el diseño visual
-  script.js          Idioma, tema, menú móvil, animaciones
-  jorge-portrait.jpg, jorge-square.jpg, favicon.svg
-index.html          Página de inicio (hero, enfoque, evidencia, caso de estudio,
-                    experiencia, contacto)
-blog.md             Página que lista todos los artículos (/blog/)
+index.md              → página de inicio (hero, sobre mí, proyectos, experiencia, servicios, contacto)
+proyectos.md           → todos los proyectos con detalle
+blog.md                → listado del blog (usa site.posts automáticamente)
+_posts/                → artículos del blog (formato: AAAA-MM-DD-titulo.md)
+_layouts/default.html  → nav + footer + toggles de idioma/tema, usado por todas las páginas
+_layouts/post.html     → plantilla de cada artículo del blog
+assets/css/main.css    → todos los estilos
+assets/img/            → fotos del sitio (ver assets/img/README.md)
+assets/files/          → tu CV en PDF (ver assets/files/README.md)
 ```
 
-## Cómo publicar en GitHub Pages
+## Cómo publicar
 
-1. Crea un repositorio en GitHub (por ejemplo `tu-usuario.github.io`, o cualquier
-   nombre si vas a usar Project Pages).
-2. Sube todos estos archivos a la raíz del repositorio.
-3. En **Settings → Pages**, selecciona la rama (`main`) como fuente. GitHub
-   construye el sitio automáticamente con Jekyll — no necesitas instalar nada.
-4. Abre `_config.yml` y completa el campo `url` con tu dirección real
-   (ej. `https://tu-usuario.github.io`) antes de publicar, para que las
-   imágenes al compartir en redes sociales se vean bien.
+1. Sube el contenido de esta carpeta a tu repositorio `jorgepalaciot.github.io` (reemplaza todo).
+2. En GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root)**.
+3. Agrega tu foto en `assets/img/hero.jpg` y `assets/img/about.jpg` (ver `assets/img/README.md`).
+4. Sube tu CV como `assets/files/CV-Jorge-Palacio.pdf` (ver `assets/files/README.md`).
+5. Espera 1-2 minutos y tu sitio estará en `https://jorgepalaciot.github.io`.
 
-## Cómo escribir un artículo nuevo
+## Escribir un nuevo artículo del blog
 
-1. Crea un archivo dentro de `_posts/` con el nombre
-   `AAAA-MM-DD-titulo-corto.md` (la fecha define el orden).
-2. Encabézalo así:
-   ```yaml
-   ---
-   title: "Título del artículo"
-   description: "Resumen corto de una línea (opcional, aparece en la lista del blog)"
-   ---
-   ```
-3. Escribe el contenido debajo en Markdown normal.
-4. El artículo aparece automáticamente en `/blog/`, ordenado del más nuevo al
-   más antiguo. No hay que tocar `blog.md`.
+Crea un archivo en `_posts/` con el formato `AAAA-MM-DD-titulo-corto.md`:
 
-Hay un artículo de ejemplo en `_posts/2026-01-15-bienvenida.md` — puedes
-editarlo o borrarlo.
+```markdown
+---
+layout: post
+title: "Título del artículo"
+date: 2026-08-10
+---
+<div class="t-es-b" markdown="1">
 
-## Ver el sitio en tu computadora antes de publicar (opcional)
+Tu texto en español aquí.
 
-Si tienes Ruby instalado:
+</div>
 
-```bash
-gem install bundler jekyll
-bundle init
-echo 'gem "github-pages", group: :jekyll_plugins' >> Gemfile
-bundle install
-bundle exec jekyll serve
+<div class="t-en-b" markdown="1">
+
+Your text in English here.
+
+</div>
 ```
 
-Y abre `http://localhost:4000`.
+Se publica automáticamente en `/blog/` en cuanto haces push.
+
+## Editar contenido
+
+- **Textos del sitio**: cada frase tiene una versión `<span class="t-es">...</span>` (español)
+  y `<span class="t-en">...</span>` (inglés) una al lado de la otra. Edita ambas para mantener el sitio bilingüe.
+- **Proyectos**: agrega o edita tarjetas en `index.md` (sección `#proyectos`) y el detalle en `proyectos.md`.
+- **Educación / objetivos académicos**: sección `#educacion` en `index.md`.
+- **Contacto**: el formulario abre tu cliente de correo (no requiere backend, funciona gratis en GitHub Pages).
+  Si más adelante quieres que envíe correos sin abrir el cliente de email, se puede conectar a un servicio
+  como Formspree con una sola línea de cambio en el `action` del formulario.
+
+## Idioma y tema
+
+Ambos se detectan automáticamente (idioma del navegador / preferencia de modo oscuro del sistema) y el visitante
+puede cambiarlos manualmente con los botones "ES/EN" y "☾/☀" del menú — su elección se recuerda en el navegador.
