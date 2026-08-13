@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 {% seo %}
 </head>
-<body>
+<body class="{% if page.url == '/' %}hero-nav-zone{% endif %}">
 
 <header id="siteHeader">
   <div class="wrap nav">
@@ -91,6 +91,20 @@ hamBtn.addEventListener('click', () => {
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   hamBtn.classList.remove('open'); mobileMenu.classList.remove('open');
 }));
+
+// header goes solid once the user scrolls past the hero (only relevant on homepage)
+const header = document.getElementById('siteHeader');
+const heroEl = document.querySelector('.hero');
+function updateHeader(){
+  if(!heroEl){ header.classList.add('solid'); header.style.position='sticky'; return; }
+  if(window.scrollY > heroEl.offsetHeight - 90){
+    header.classList.add('solid'); document.body.classList.remove('hero-nav-zone');
+  }else{
+    header.classList.remove('solid'); document.body.classList.add('hero-nav-zone');
+  }
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 </script>
 </body>
 </html>
