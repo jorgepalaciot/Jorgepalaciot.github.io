@@ -1,0 +1,29 @@
+title: Jorge Luis Palacio Tello
+title_en: Jorge Luis Palacio Tello
+description: >-
+  Ingeniero Industrial especializado en mejora de procesos, Lean Management y gestión de calidad.
+description_en: >-
+  Industrial Engineer specialized in process improvement, Lean Management, and quality management.
+url: "" # p.ej. "https://jorgepalaciot.github.io" — complétalo antes de publicar
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: /:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
