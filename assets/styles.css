@@ -224,16 +224,17 @@ p:last-child { margin-bottom: 0; }
 /* ---------------- Hero ---------------- */
 .hero { padding: 56px 0 72px; }
 
-.hero-grid { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+.hero-grid { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
 
 .hero-photo-frame {
   border: 1px solid var(--rule-strong);
   padding: 0;
   background: var(--bg-elevated);
+  max-width: 300px;
 }
 .hero-photo-frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   filter: grayscale(0.35) contrast(1.03);
 }
