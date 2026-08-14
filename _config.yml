@@ -1,5 +1,5 @@
 title: Jorge Palacio
-description: "Ingeniero Industrial — procesos, automatización y datos. Disponible para consultoría, empleo y programas de maestría."
+description: "Ingeniero Industrial — procesos, datos y automatización. Disponible para consultoría, empleo y programas de maestría."
 url: "https://jorgepalaciot.github.io"
 baseurl: ""
 lang: es
@@ -18,10 +18,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-permalink: /:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - vista-previa.html
